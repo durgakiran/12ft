@@ -1,5 +1,7 @@
 import { Loading } from "@geist-ui/core";
 import { useEffect, useState } from "react";
+import { GOOGLE_CACHE_ELEMENT_ID } from "../common/constants/regpexp";
+import removeDOMElementUsingId from "../core/DOM/parseHTMLDoc";
 import getContentFromCache from "../core/utils/getContentFromCache";
 import validUrl from "../core/utils/validURI";
 
@@ -8,8 +10,9 @@ export default function Content({ url }: { url: string }) {
   const [loadingContent, setLoadingContent] = useState(false);
 
   const fetchResponse = async () => {
-    const content = await getContentFromCache(url);
+    let content = await getContentFromCache(url);
     setLoadingContent(false);
+    content = removeDOMElementUsingId(content, GOOGLE_CACHE_ELEMENT_ID);
     setCachedContent(content);
   };
 
