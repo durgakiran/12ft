@@ -1,0 +1,4 @@
+// babel file to run jest tests
+{
+    "presets": ["next/babel"]
+}
