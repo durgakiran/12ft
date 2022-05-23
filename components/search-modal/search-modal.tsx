@@ -32,6 +32,7 @@ export default function SearchModal({
                         placeholder='enter your url'
                         onChange={(e) => setURL(e.target.value)}
                         width='100%'
+                        autoFocus
                     />
                 </div>
             </Modal.Content>
