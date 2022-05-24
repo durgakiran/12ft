@@ -24,7 +24,7 @@ const Home: NextPage = () => {
     }
 
     return (
-        <div className='h-screen w-screen'>
+        <div className='h-screen'>
             <Head>
                 <title>12ft | Access articles behind paywall</title>
                 <meta name='description' content='Access articles behind paywalls' />
