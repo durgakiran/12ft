@@ -7,7 +7,7 @@ export function SearchShortcut({ handleOnClick }: { handleOnClick: () => void })
     }
 
     return (
-        <div className='fixed right-5 bottom-5'>
+        <div className='fixed right-5 bottom-5 z-1000'>
             <Button scale={2/3} shadow type='secondary' onClick={() => onButtonClick()}>
                 Press Alt + k  to enter web URL
             </Button>
