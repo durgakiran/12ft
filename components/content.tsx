@@ -1,4 +1,4 @@
-import { Loading } from '@geist-ui/core';
+import { Loading, Page } from '@geist-ui/core';
 import { useAtom } from 'jotai';
 import Logger from 'js-logger';
 import { useEffect, useState } from 'react';
@@ -36,14 +36,20 @@ export default function Content() {
 
     if (loadingContent) {
         return (
-            <div>
-                <Loading type='secondary'>Loading</Loading>
-            </div>
+            <Page padding={0} margin={0}>
+                <div>
+                    <Loading type='secondary'>Loading</Loading>
+                </div>
+            </Page>
         );
     }
 
     if (cachedContent) {
-        return <div dangerouslySetInnerHTML={{ __html: cachedContent }}></div>;
+        return (
+            <Page padding={0} margin={0}>
+                <div dangerouslySetInnerHTML={{ __html: cachedContent }}></div>;
+            </Page>
+        )
     }
 
     if (!URL) {
@@ -51,9 +57,9 @@ export default function Content() {
     }
 
     return (
-        <>
+        <Page padding={0} margin={0}>
             <h2>Invalid URL</h2>
             <p>Enter valid url</p>
-        </>
+        </Page>
     );
 }
