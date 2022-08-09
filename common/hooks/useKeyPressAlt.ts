@@ -1,3 +1,4 @@
+import Logger from 'js-logger';
 import { useEffect, useState } from 'react';
 
 export default function useKeyPressAlt(key: string) {
@@ -5,8 +6,9 @@ export default function useKeyPressAlt(key: string) {
 
     useEffect(() => {
         function handleKeyPress(event: KeyboardEvent) {
+            Logger.debug("KEY PRESSED", event.code);
             if (event.altKey && !event.ctrlKey && !event.shiftKey) {
-                setIsKeyPressed(key === event.key);
+                setIsKeyPressed(('Key' + key) === event.code || ('Key' + key.toUpperCase()) === event.code);
             } else {
                 setIsKeyPressed(false);
             }
