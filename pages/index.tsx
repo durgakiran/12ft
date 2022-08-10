@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import PageContainer from '../components/page-container/page-container';
 import SearchContainer from '../components/search-container/searchContainer';
 
 const Home: NextPage = () => {
@@ -14,7 +13,6 @@ const Home: NextPage = () => {
             </Head>
             <div className='overflow-auto'>
                 <SearchContainer />
-                <PageContainer />
             </div>
         </div>
     );
